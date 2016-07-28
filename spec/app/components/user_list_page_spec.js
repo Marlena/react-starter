@@ -10,4 +10,5 @@ describe('UserListPage', () => {
   it('renders the users', () => {
     expect('.user-list').toContainText('Felix');
   });
+
 });

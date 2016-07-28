@@ -24,6 +24,9 @@ class Application extends React.Component {
         <a href="createNewUser" onClick={e => {e.preventDefault(); router.navigate('/users/new');}}>Create New User</a>
         <br/>
         <a href="userList" onClick={e => {e.preventDefault(); router.navigate('/users/list');}}> All Users</a>
+        <br/>
+        or maybe you need to look at some
+        <a href="babyAnimalPage" onClick={e => {e.preventDefault(); router.navigate('/babyAnimalPage');}}> baby animals</a>.
         <Router {...{router, config, ...store}}/>
       </div>
     );

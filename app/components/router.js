@@ -1,6 +1,7 @@
 const React = require('react');
 const types = require('react').PropTypes;
 const ApiPage = require('./api_page');
+const BabyAnimalPage = require('./baby_animal_page');
 const UserCreatePage = require('./user_create_page');
 const UserListPage = require('./user_list_page');
 const TodoPage = require('./todo_page');
@@ -25,6 +26,7 @@ const routes = {
   '/': 'todoList',
   '/todoList': 'todoList',
   '/apiPage': 'apiPage',
+  '/babyAnimalPage': 'babyAnimalPage',
   '/users': {
     '/list': 'showUsers',
     '/new': 'createUser'
@@ -51,6 +53,10 @@ class Router extends React.Component {
 
   apiPage = () => {
     this.setState({Page: ApiPage});
+  };
+
+  babyAnimalPage = () => {
+    this.setState({Page: BabyAnimalPage});
   };
 
   todoList = () => {

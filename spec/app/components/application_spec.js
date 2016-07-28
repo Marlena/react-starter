@@ -6,8 +6,11 @@ describe('Application', () => {
   beforeEach(() => {
     const Application = require('../../../app/components/application');
     TodoList = require('../../../app/components/todo_list');
-    spyOn(TodoList.prototype, 'render').and.callThrough();
+
     const config = {title: 'title'};
+
+    spyOn(TodoList.prototype, 'render').and.callThrough();
+
     ReactDOM.render(<Application {...{config, Dispatcher}}/>, root);
   });
 
@@ -22,4 +25,5 @@ describe('Application', () => {
   it('has a title', () => {
     expect('.title').toHaveText('title');
   });
+
 });
