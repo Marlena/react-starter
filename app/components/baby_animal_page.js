@@ -1,4 +1,6 @@
-const React = require('react');
+import React from 'react';
+import BabyAnimal from './baby_animal.js';
+
 const types = require('react').PropTypes;
 
 class BabyAnimalPage extends React.Component{
@@ -10,10 +12,9 @@ class BabyAnimalPage extends React.Component{
   render(){
     return (
         <div className="baby-animal-page">
-          <h1>Hai!!!</h1>
+          <BabyAnimal />
         </div>);
   }
-
 
 }
 
