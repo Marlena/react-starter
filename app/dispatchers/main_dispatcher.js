@@ -10,6 +10,9 @@ const MainDispatcher = {
   },
   userSet({data}) {
     this.$store.merge({userId: data});
+  },
+  babyAnimalCreate({data}){
+    this.$store.refine('babyAnimals').push(data);
   }
 };
 

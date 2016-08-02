@@ -1,4 +1,5 @@
 module.exports = {
   todoItems: [],
-  users: []
+  users: [],
+  babyAnimals: []
 };
