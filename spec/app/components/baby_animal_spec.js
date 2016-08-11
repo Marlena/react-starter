@@ -7,7 +7,7 @@ describe('BabyAnimal', ()=> {
     BabyAnimal = require('../../../app/components/baby_animal');
 
     spyOn(BabyAnimal.prototype, 'render').and.callThrough();
-    ReactDOM.render(<BabyAnimal />, root);
+    ReactDOM.render(<BabyAnimal value="http://wallpapercave.com/wp/IhMAYSI.jpg"/>, root);
   });
 
   it('shows', () => {
@@ -19,8 +19,6 @@ describe('BabyAnimal', ()=> {
   });
 
   it('shows a photo', ()=> {
-    expect($('img')).toExist();
-    //here is the photo
-    //https://en.wikipedia.org/wiki/Angora_rabbit#/media/File:Englishangora.jpg
+    expect('img').toHaveAttr('src', 'http://wallpapercave.com/wp/IhMAYSI.jpg');
   });
 });

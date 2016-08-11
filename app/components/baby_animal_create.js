@@ -24,7 +24,7 @@ class BabyAnimalCreate extends React.Component{
       <div className="baby-animal-create">
         <form onSubmit={this.submit}>
           <input type="text" name="babyAnimal" value={babyAnimal} onChange={this.change}/>
-          <button type="submit">Create!</button>
+          <button className="btn btn-default" type="submit">Create!</button>
         </form>
       </div>
       );

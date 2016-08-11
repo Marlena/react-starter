@@ -3,15 +3,13 @@ require ('../spec_helper');
 
 describe('Baby Animal Page', () => {
   let BabyAnimalPage;
-  let BabyAnimalCreate;
 
   beforeEach(()=> {
     BabyAnimalPage = require('../../../app/components/baby_animal_page');
-    BabyAnimalCreate = require('../../../app/components/baby_animal_create');
 
     spyOn(BabyAnimalPage.prototype, 'render').and.callThrough();
 
-    ReactDOM.render(<BabyAnimalPage />, root);
+    ReactDOM.render(<BabyAnimalPage babyAnimals={['http://wallpapercave.com/wp/IhMAYSI.jpg']}/>, root);
 
   });
 
@@ -34,5 +32,11 @@ describe('Baby Animal Page', () => {
       expect('.baby-animal-create').toExist();
     });
   });
+
+  describe('Baby Animal list', ()=> {
+    it('exists', () => {
+      expect('.baby-animal-list').toExist()
+    });
+  })
 
 });

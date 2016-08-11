@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "babel-polyfill": "^6.6.1",
+    "bootstrap": "^4.0.0-alpha.3",
     "event-stream": "^3.3.2",
     "express": "^4.13.4",
     "isomorphic-fetch": "^2.2.1",
