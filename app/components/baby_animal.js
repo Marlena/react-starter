@@ -1,5 +1,5 @@
 import React from'react';
-import {Actions} from 'p-flux';
+const BabyAnimalDelete = require('./baby_animal_delete');
 
 const types = React.PropTypes;
 
@@ -10,17 +10,13 @@ class BabyAnimal extends React.Component{
     value: types.node.isRequired
   };
 
-  click = e => {
-    Actions.babyAnimalDelete(this.props.value);
-  };
-
   render(){
     const {value} = this.props;
 
     return (
         <div className="baby-animal">
           <img className="photo" src={value}/>
-          <button type="button" className="delete-baby-animal btn btn-default" onClick={this.click}>Delete!</button>
+          <BabyAnimalDelete value={value}/>
         </div>
     );
   }
