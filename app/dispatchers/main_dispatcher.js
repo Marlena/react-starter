@@ -13,6 +13,9 @@ const MainDispatcher = {
   },
   babyAnimalCreate({data}){
     this.$store.refine('babyAnimals').push(data);
+  },
+  babyAnimalDelete({data}){
+    this.$store.refine('babyAnimals').remove(data);
   }
 };
 

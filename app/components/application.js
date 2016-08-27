@@ -16,7 +16,7 @@ class Application extends React.Component {
   render() {
     const {config, store, router} = this.props;
     return (
-      <div className="pui-react-starter">
+      <div className="pui-react-starter page-background">
         <a href="todoList" onClick={e => {e.preventDefault(); router.navigate('/todoList');}}>Todo List!</a>
         <br/>
         <a href="apiPage" onClick={e => {e.preventDefault(); router.navigate('/apiPage');}}>Page that hits an api</a>

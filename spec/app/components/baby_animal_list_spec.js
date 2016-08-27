@@ -22,5 +22,4 @@ describe('Baby Animal List', ()=> {
   it('shows 3 baby animals', () => {
     expect('.baby-animal').toHaveLength(3);
   });
-
 });

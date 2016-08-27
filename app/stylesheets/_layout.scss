@@ -1,4 +1,17 @@
+html, body, #root{
+  height: 100%;
+}
+
 .pui-react-starter {
   padding: 20px;
   color: darkblue;
+  margin: 0 auto;
+  margin-bottom: 0;
 }
+
+.page-background{
+  background: skyblue;
+  min-height: 100%;
+}
+
+

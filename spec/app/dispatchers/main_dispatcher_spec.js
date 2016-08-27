@@ -43,6 +43,20 @@ describe('MainDispatcher', () => {
     });
   });
 
+  describe('babyAnimalDelete', () => {
+    beforeEach(() => {
+      subject.$store = new Cursor({babyAnimals: ['http://wallpapercave.com/wp/IhMAYSI.jpg']}, cursorSpy);
+    });
+
+    it('deletes the baby animal', () => {
+      subject.dispatch({type: 'babyAnimalDelete', data: 'http://wallpapercave.com/wp/IhMAYSI.jpg'})
+      expect(cursorSpy).toHaveBeenCalledWith({
+        babyAnimals: []
+      })
+    });
+
+  });
+
   describe('userCreate', () => {
     beforeEach(() => {
       subject.$store = new Cursor({users: [{name: 'Alice'}]}, cursorSpy);
