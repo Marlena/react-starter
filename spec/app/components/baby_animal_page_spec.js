@@ -21,22 +21,17 @@ describe('Baby Animal Page', () => {
     expect(BabyAnimalPage.prototype.render).toHaveBeenCalled();
   });
 
-  describe('BabyAnimal', () => {
-    it('shows', () => {
-      expect('.baby-animal').toExist();
-    });
+  it('has a BabyAnimal', () => {
+    expect('.baby-animal').toExist();
   });
 
-  describe('Create baby animal', () => {
-    it('exists', ()=>{
-      expect('.baby-animal-create').toExist();
-    });
+  it('has a BabyAnimalCreate', ()=>{
+    expect('.baby-animal-create').toExist();
   });
 
-  describe('Baby Animal list', ()=> {
-    it('exists', () => {
-      expect('.baby-animal-list').toExist()
-    });
-  })
+  it('has a BabyAnimalList', () => {
+    expect('.baby-animal-list').toExist();
+  });
+
 
 });

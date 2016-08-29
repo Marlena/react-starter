@@ -38,7 +38,6 @@ class BabyAnimalCreate extends React.Component{
         </form>
         <div>
           <button className="baby-animal-example btn btn-default" type="button" onClick={this.populateExample}>Example: http://www.cubebreaker.com/wp-content/uploads/2014/03/baby-goats-01.jpg</button>
-
         </div>
       </div>
       );

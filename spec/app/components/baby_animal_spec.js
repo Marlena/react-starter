@@ -22,7 +22,7 @@ describe('BabyAnimal', ()=> {
     expect('img').toHaveAttr('src', 'http://wallpapercave.com/wp/IhMAYSI.jpg');
   });
 
-  it('shows delete', () => {
+  it('has a BabyAnimalDelete', () => {
     expect(".delete-baby-animal").toExist();
   });
 

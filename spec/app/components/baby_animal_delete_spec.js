@@ -1,14 +1,10 @@
 require('../spec_helper');
 
-describe('Delete Baby Animal', () => {
+describe('Baby Animal Delete', () => {
   beforeEach(() => {
     const BabyAnimalDelete = require('../../../app/components/baby_animal_delete');
 
     ReactDOM.render(<BabyAnimalDelete value="http://wallpapercave.com/wp/IhMAYSI.jpg"/>, root);
-  });
-
-  it('exists', () => {
-    expect('.delete-baby-animal').toExist();
   });
 
   it('shows a delete button', () => {
@@ -16,7 +12,7 @@ describe('Delete Baby Animal', () => {
   });
 
 
-  describe('click delete', () => {
+  describe('clicking the delete button', () => {
     beforeEach(()=> {
       $('.delete-baby-animal').simulate('click');
     });

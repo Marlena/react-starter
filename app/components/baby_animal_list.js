@@ -12,8 +12,8 @@ class BabyAnimalList extends React.Component {
 
     const {babyAnimals} = this.props;
 
-    const babyAnimalList = babyAnimals.map( (baby, key) => {
-      return <BabyAnimal value={baby} key={key}/>
+    const babyAnimalList = babyAnimals.map( (value, key) => {
+      return <BabyAnimal value={value} key={key}/>
     });
 
     return (
@@ -25,3 +25,4 @@ class BabyAnimalList extends React.Component {
 }
 
 module.exports = BabyAnimalList;
+
