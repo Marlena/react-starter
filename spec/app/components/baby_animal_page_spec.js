@@ -32,6 +32,5 @@ describe('Baby Animal Page', () => {
   it('has a BabyAnimalList', () => {
     expect('.baby-animal-list').toExist();
   });
-
-
+  
 });

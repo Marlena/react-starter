@@ -19,7 +19,7 @@ class BabyAnimalCreate extends React.Component{
   };
 
   populateExample = () =>{
-    this.setState({babyAnimal:'http://www.cubebreaker.com/wp-content/uploads/2014/03/baby-goats-01.jpg'});
+    this.setState({babyAnimal:'http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif'});
   };
 
   render() {
@@ -31,17 +31,23 @@ class BabyAnimalCreate extends React.Component{
       <div className="baby-animal-create">
         <form onSubmit={this.submit} className="form-inline">
           <div className="form-group">
-            <label htmlFor="baby-animal-input">Baby Animal Link</label>&nbsp;
-            <input type="text" className="form-control" id="baby-animal-input" name="babyAnimal" value={babyAnimal} onChange={this.change}/>&nbsp;
+            <div className="baby-animal-tag">
+              <label htmlFor="baby-animal-tag-input">Baby Animal Tag</label>&nbsp;
+              <input type="text" className="form-control" id="baby-animal-tag-input"/>
+            </div>
+            <div className="baby-animal-link">
+              <label htmlFor="baby-animal-input">Baby Animal Link</label>&nbsp;
+              <input type="text" className="form-control" id="baby-animal-input" name="babyAnimal" value={babyAnimal} onChange={this.change}/>&nbsp;
+            </div>
             <button className="btn btn-default" disabled={disabled} type="submit">Create!</button>
           </div>
         </form>
         <div>
-          <button className="baby-animal-example btn btn-default" type="button" onClick={this.populateExample}>Example: http://www.cubebreaker.com/wp-content/uploads/2014/03/baby-goats-01.jpg</button>
+          <button className="baby-animal-example btn btn-default" type="button" onClick={this.populateExample}>Example: http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif</button>
         </div>
       </div>
       );
   }
 }
 
-module.exports = BabyAnimalCreate;
+module.exports = BabyAnimalCreate

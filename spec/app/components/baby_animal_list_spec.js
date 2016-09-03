@@ -7,11 +7,11 @@ describe('Baby Animal List', ()=> {
     BabyAnimalList = require('../../../app/components/baby_animal_list');
 
     let bunny = 'http://wallpapercave.com/wp/IhMAYSI.jpg';
-    let goat = 'http://www.cubebreaker.com/wp-content/uploads/2014/03/baby-goats-01.jpg';
+    let panda = 'http://i.giphy.com/v7a5kuROiwJG0.gif';
     let puppy = 'http://marlenacompton.com/wp-content/uploads/2010/08/IMG_0581.jpg';
 
     spyOn(BabyAnimalList.prototype, 'render').and.callThrough();
-    ReactDOM.render(<BabyAnimalList babyAnimals={[bunny, goat, puppy]}/>, root);
+    ReactDOM.render(<BabyAnimalList babyAnimals={[bunny, panda, puppy]}/>, root);
 
   });
 
