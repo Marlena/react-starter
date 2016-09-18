@@ -8,12 +8,12 @@ class BabyAnimalList extends React.Component {
     babyAnimals: types.array.isRequired
   };
 
+
   render(){
 
     const {babyAnimals} = this.props;
-
     const babyAnimalList = babyAnimals.map( (value, key) => {
-      return <BabyAnimal value={value} key={key}/>
+      return <BabyAnimal value={value} key={key}/>;
     });
 
     return (

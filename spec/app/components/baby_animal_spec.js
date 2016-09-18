@@ -6,8 +6,11 @@ describe('BabyAnimal', ()=> {
   beforeEach(()=> {
     BabyAnimal = require('../../../app/components/baby_animal');
 
+    let value = {type: 'bunny', link: 'http://wallpapercave.com/wp/IhMAYSI.jpg'};
+
+
     spyOn(BabyAnimal.prototype, 'render').and.callThrough();
-    ReactDOM.render(<BabyAnimal value="http://wallpapercave.com/wp/IhMAYSI.jpg"/>, root);
+    ReactDOM.render(<BabyAnimal value={value}/>, root);
   });
 
   it('shows', () => {
@@ -23,7 +26,7 @@ describe('BabyAnimal', ()=> {
   });
 
   it('has a BabyAnimalDelete', () => {
-    expect(".delete-baby-animal").toExist();
+    expect('.delete-baby-animal').toExist();
   });
 
 });

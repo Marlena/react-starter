@@ -36,23 +36,26 @@ describe('MainDispatcher', () => {
     });
 
     it('adds a baby animal to the baby animals list', ()=> {
-      subject.dispatch({type: 'babyAnimalCreate', data: 'http://wallpapercave.com/wp/IhMAYSI.jpg'});
+      subject.dispatch({type: 'babyAnimalCreate', data: {type: 'bunny', link: 'http://dailybunny.org/wp-content/uploads/2016/08/All-Hail-King-and-Queen-Bunny-1.jpg'}});
       expect(cursorSpy).toHaveBeenCalledWith({
-        babyAnimals: ['http://wallpapercave.com/wp/IhMAYSI.jpg']
+        babyAnimals: [{type: 'bunny', link: 'http://dailybunny.org/wp-content/uploads/2016/08/All-Hail-King-and-Queen-Bunny-1.jpg'}]
       });
     });
   });
 
   describe('babyAnimalDelete', () => {
+    let bunny;
     beforeEach(() => {
-      subject.$store = new Cursor({babyAnimals: ['http://wallpapercave.com/wp/IhMAYSI.jpg']}, cursorSpy);
+      bunny = {type: 'bunny', link: 'http://wallpapercave.com/wp/IhMAYSI.jpg'};
+      subject.$store = new Cursor({babyAnimals: [bunny]}, cursorSpy);
     });
 
     it('deletes the baby animal', () => {
-      subject.dispatch({type: 'babyAnimalDelete', data: 'http://wallpapercave.com/wp/IhMAYSI.jpg'})
+
+      subject.dispatch({type: 'babyAnimalDelete', data: bunny});
       expect(cursorSpy).toHaveBeenCalledWith({
         babyAnimals: []
-      })
+      });
     });
 
   });

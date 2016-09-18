@@ -5,7 +5,7 @@ const types = React.PropTypes;
 
 class BabyAnimalDelete extends React.Component {
   static propTypes = {
-    value: types.string.isRequired
+    value: types.object.isRequired
   };
 
   click = e => {

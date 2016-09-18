@@ -1,6 +1,5 @@
 import React from 'react';
-import BabyAnimal from './baby_animal';
-import BabyAnimalCreate from './baby_animal_create'
+import BabyAnimalCreate from './baby_animal_create';
 import BabyAnimalList from './baby_animal_list';
 
 const types = require('react').PropTypes;

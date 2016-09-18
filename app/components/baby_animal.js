@@ -7,7 +7,7 @@ const types = React.PropTypes;
 class BabyAnimal extends React.Component{
 
   static propTypes = {
-    value: types.node.isRequired
+    value: types.object.isRequired
   };
 
   render(){
@@ -15,7 +15,7 @@ class BabyAnimal extends React.Component{
 
     return (
         <div className="baby-animal">
-          <img className="photo" src={value}/>
+          <img className="photo" src={value.link}/>
           <BabyAnimalDelete value={value}/>
         </div>
     );

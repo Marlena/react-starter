@@ -19,12 +19,13 @@ describe('BabyAnimalCreate', () => {
 
       describe('when there is text', () => {
         beforeEach(() => {
-          $('#baby-animal-input').simulate('change', {target: {value: 'http://wallpapercave.com/wp/IhMAYSI.jpg'}});
+          $('#baby-animal-type-input').simulate('change', {target: {value: 'bunny'}});
+          $('#baby-animal-link-input').simulate('change', {target: {value: 'www.dailybunny.org'}});
         });
 
 
         it('the create button is not disabled', () => {
-          expect("button:contains('Create!')").not.toBeDisabled();
+          expect('button:contains(\'Create!\')').not.toBeDisabled();
         });
 
         describe('when the form is submitted', () => {
@@ -35,18 +36,20 @@ describe('BabyAnimalCreate', () => {
           });
 
           it('dispatches the create action', ()=>{
-            expect('babyAnimalCreate').toHaveBeenDispatchedWith({data: 'http://wallpapercave.com/wp/IhMAYSI.jpg'});
+            expect('babyAnimalCreate').toHaveBeenDispatchedWith({data: {type: 'bunny', link: 'www.dailybunny.org'}});
           });
 
-          it('clears the value', () => {
-            expect('input#baby-animal-input').toHaveValue('');
+          it('clears the link value', () => {
+            expect('input#baby-animal-link-input').toHaveValue('');
+          });
+
+          it('clears the type value', () => {
+            expect('input#baby-animal-type-input').toHaveValue('');
           });
 
         });
 
       });
-
-
 
     });
   });
@@ -58,30 +61,30 @@ describe('BabyAnimalCreate', () => {
     });
 
     it('the create button is disabled', () => {
-      expect("button:contains('Create!')").toBeDisabled();
+      expect('button:contains(\'Create!\')').toBeDisabled();
     });
 
   });
 
     it('shows', () => {
-      expect("button:contains('Example')").toHaveLength(1);
+      expect('button:contains(\'Example\')').toHaveLength(1);
     });
 
     describe('when the example button is clicked', () => {
       it('sets the state in the text box', () => {
-        $("button:contains('Example: http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif')").simulate('click');
-        expect('#baby-animal-input').toHaveValue('http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif');
+        $('button:contains(\'Example\')').simulate('click');
+        expect('#baby-animal-link-input').toHaveValue('http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif');
       });
 
     });
 
-  describe('adding a tag', () => {
+  describe('adding a type', () => {
     it('shows a text box in the form', () => {
-      expect('input#baby-animal-tag-input').toExist();
+      expect('input#baby-animal-type-input').toExist();
     });
 
     it('shows a label', () => {
-      expect('div.baby-animal-tag > label').toHaveText('Baby Animal Tag');
+      expect('div.baby-animal-type > label').toHaveText('Baby Animal Type');
     });
 
   });

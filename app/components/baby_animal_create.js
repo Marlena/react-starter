@@ -5,13 +5,18 @@ class BabyAnimalCreate extends React.Component{
 
   constructor(props, context){
     super(props, context);
-    this.state = {babyAnimal: ''};
+    this.state = {
+      babyAnimalType: '',
+      babyAnimalLink: ''
+    };
   }
 
   submit = e => {
     e.preventDefault();
-    Actions.babyAnimalCreate(this.state.babyAnimal);
-    this.setState({babyAnimal: ''});
+
+    Actions.babyAnimalCreate({ type: this.state.babyAnimalType, link: this.state.babyAnimalLink});
+    this.setState({babyAnimalLink: ''});
+    this.setState({babyAnimalType: ''});
   };
 
   change = e => {
@@ -19,25 +24,26 @@ class BabyAnimalCreate extends React.Component{
   };
 
   populateExample = () =>{
-    this.setState({babyAnimal:'http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif'});
+    this.setState({babyAnimalLink:'http://gifrific.com/wp-content/uploads/2012/07/Bunny-eating-dandelion.gif'});
   };
 
   render() {
-    const {babyAnimal} = this.state;
+    const {babyAnimalType} = this.state;
+    const {babyAnimalLink} = this.state;
 
-    const disabled = !babyAnimal.length;
+    const disabled = !babyAnimalType.length;
 
     return(
       <div className="baby-animal-create">
         <form onSubmit={this.submit} className="form-inline">
           <div className="form-group">
-            <div className="baby-animal-tag">
-              <label htmlFor="baby-animal-tag-input">Baby Animal Tag</label>&nbsp;
-              <input type="text" className="form-control" id="baby-animal-tag-input"/>
+            <div className="baby-animal-type">
+              <label htmlFor="baby-animal-type-input">Baby Animal Type</label>&nbsp;
+              <input type="text" className="form-control" id="baby-animal-type-input" name="babyAnimalType" value={babyAnimalType} onChange={this.change}/>
             </div>
             <div className="baby-animal-link">
-              <label htmlFor="baby-animal-input">Baby Animal Link</label>&nbsp;
-              <input type="text" className="form-control" id="baby-animal-input" name="babyAnimal" value={babyAnimal} onChange={this.change}/>&nbsp;
+              <label htmlFor="baby-animal-link-input">Baby Animal Link</label>&nbsp;
+              <input type="text" className="form-control" id="baby-animal-link-input" name="babyAnimalLink" value={babyAnimalLink} onChange={this.change}/>&nbsp;
             </div>
             <button className="btn btn-default" disabled={disabled} type="submit">Create!</button>
           </div>
@@ -50,4 +56,4 @@ class BabyAnimalCreate extends React.Component{
   }
 }
 
-module.exports = BabyAnimalCreate
+module.exports = BabyAnimalCreate;
